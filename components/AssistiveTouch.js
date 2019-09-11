@@ -63,7 +63,7 @@ export default class AssistiveTouch extends React.Component{
         }
         return(
             <Animated.View {...this._panResponder.panHandlers} style = {[panStyle, styles.draggableButton]}>
-                <TouchableOpacity style = {styles.innerCircle} onPress = {() => {this.props.onPress && this.props.onPress()}}>
+                <TouchableOpacity style = {[styles.innerCircle, this.props.style]} onPress = {() => {this.props.onPress && this.props.onPress()}}>
                     <Text style = {[styles.textStyle, this.props.textStyle]}>{this.props.text}</Text>
                 </TouchableOpacity>
             </Animated.View>

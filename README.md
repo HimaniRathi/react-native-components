@@ -16,7 +16,7 @@ npm install react-native-components --save
 | `buttonType` | `String` | `btn-default` | `btn-default`, `btn-primary`, `btn-success`, `btn-info`, `btn-warning`, `btn-danger`, `btn-link` | different style of button |
 | `handleButtonPress` | `Function` | `null` | Pass a function | on button press, the function will be called |
 | `style` | `Object` | `null` | Props of Stylesheet with values | give style to the button as the user wants |
-| `buttonStretch` | `bool` | `false` | `true`, `false` | if true, button will have screen width; else button is small
+| `buttonStretch` | `boolean` | `false` | `true`, `false` | if true, button will have screen width; else button is small
 
 # Search Bar
 
@@ -30,3 +30,15 @@ npm install react-native-components --save
 | `searchBarHighlightStyle` | `Object` | `null` | Props of Stylesheet with values | Highlights the search bar when focused on | 
 | `placeholderTextStyle` | `Object` | `null` | Props of Stylesheet with values | Change the style of the placeholder text according to the requirement of the user | 
 | `searchIconStyle` | `Object` | `null` | Props of Stylesheet with values | Change the style of the search icon according to the requirement of the user | 
+
+# Assistive Touch
+
+# Properties
+| Properties | Type | Default | Values | Description|
+| --- | --- | --- | --- | --- |
+| `comeBackToOriginalPosition` | `boolean` | `false` | `true`, `false` | if true, the assistiveTouch comes back to its original position; else it stays at the place where the user drops it |
+| `onPress` | `Function` | `null` | Pass a function | If `comeBackToOriginalPosition` is true, the assistive touch when return to the original position calls this function; else the function is provoked when tapped on the button |
+| `style` | `Object` | `null` | Props of Stylesheet with values | Change the style of the assistive touch according to the requirement of the user | 
+| `startPosition` | `Object` | `{x: 0, y: screenHeight/3}` | coordinates of x and y | (0,0) is the position in the middle of the screen; set the x and y coordinates accordingly | 
+| `text` | `String` | Empty String | Any String | Text in circle |
+| `textStyle` | `Object` | `null` | Props of Stylesheet with values | Change the style of the text in assistive touch according to the requirement of the user | 
