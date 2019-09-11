@@ -17,6 +17,14 @@
   ],
   "author": "Himani Rathi",
   "license": "MIT",
+  "dependencies": {
+    "react-native-size-matters": "^0.2.1",
+    "react-native-loading-placeholder": "0.0.6"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz"
+  },
   "bugs": {
     "url": "https://github.com/HimaniRathi/react-native-components/issues"
   },
