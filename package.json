@@ -1,0 +1,24 @@
+{
+  "name": "react-native-components",
+  "version": "1.0.0",
+  "description": "basic react native components to make coding easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HimaniRathi/react-native-components.git"
+  },
+  "keywords": [
+    "Button",
+    "Search",
+    "Search Bar"
+  ],
+  "author": "Himani Rathi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HimaniRathi/react-native-components/issues"
+  },
+  "homepage": "https://github.com/HimaniRathi/react-native-components#readme"
+}
