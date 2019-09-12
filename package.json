@@ -18,8 +18,9 @@
   "author": "Himani Rathi",
   "license": "MIT",
   "dependencies": {
-    "react-native-size-matters": "^0.2.1",
-    "prop-types": "^15.5.10"
+    "@babel/runtime": "^7.6.0",
+    "prop-types": "^15.5.10",
+    "react-native-size-matters": "^0.2.1"
   },
   "peerDependencies": {
     "react": "^16.8.3",
