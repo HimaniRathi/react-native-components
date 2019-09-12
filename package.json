@@ -2,7 +2,7 @@
   "name": "react-native-components",
   "version": "1.0.0",
   "description": "basic react native components to make coding easy",
-  "main": "components/Button.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
