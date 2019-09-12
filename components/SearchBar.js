@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, View, TextInput, Dimensions, TouchableOpacity} from 'react-native';
-import PropTypes from 'prop-types'
-import searchIcon from '../assets/search_icon.png'
+import PropTypes from 'prop-types';
+import searchIcon from '../assets/search_icon.png';
 
 export default class SearchBar extends React.Component{ 
     static propTypes = {
@@ -30,7 +30,7 @@ export default class SearchBar extends React.Component{
         return(
             <View style = {this.state.selected ? [styles.filterInput, this.props.searchBarStyle, this.props.searchBarHighlightStyle]: [styles.filterInput, this.props.searchBarStyle]}>
                 <TouchableOpacity style = {[styles.searchIconStyle, this.props.searchIconStyle]} onPress = {() => {this.props.onSearchPress && this.props.onSearchPress()}}>
-                    <Image source = {searchIcon} />
+                    <Image source = {searchIcon}/>
                 </TouchableOpacity>
                 <TextInput
                     style = {[styles.placeholderStyle, this.props.placeholderTextStyle]}
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: 1,
         borderRadius: 3,
-        width: Dimensions.get("window").width-20,
+        marginHorizontal: 10,
         alignItems: 'center',
     },
     placeholderStyle: {

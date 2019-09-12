@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions, TouchableOpacity, Text, PanResponder, Animated} from 'react-native';
 import PropTypes from 'prop-types';
-import {scale, moderateScale, verticalScale} from 'react-native-size-matters';
+// import {scale, moderateScale, verticalScale} from 'react-native-size-matters';
 
 let screenHeight = Dimensions.get("window").height;
 let screenWidth = Dimensions.get("window").width;
@@ -73,19 +73,19 @@ export default class AssistiveTouch extends React.Component{
 const styles = StyleSheet.create({
     draggableButton: {
         position: 'absolute',
-        width: scale(55), 
-        height: scale(55), 
+        width: 55, 
+        height: 55, 
         backgroundColor: "#474747", 
-        borderRadius: scale(55), 
+        borderRadius: 55, 
         zIndex: 1000, 
         justifyContent: 'center', 
         alignItems: 'center'
     },
     innerCircle: {
         backgroundColor: "#eaeaea", 
-        width: scale(50), 
-        height: scale(50), 
-        borderRadius: scale(50),
+        width: 50, 
+        height: 50, 
+        borderRadius: 50,
         justifyContent: 'center', 
         alignItems: 'center'
     },

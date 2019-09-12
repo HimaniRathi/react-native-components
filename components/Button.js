@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 
 export default class Button extends React.Component{ 
     static propTypes = {
-        buttonText: PropTypes.string,
         buttonType: PropTypes.string,
-        handleButtonPress: PropTypes.func,
+        onPress: PropTypes.func,
         style: PropTypes.object,
+        textStyle: PropTypes.object,
+        children: PropTypes.string.isRequired,
         buttonStretch: PropTypes.bool
     }
     static defaultProps = {
-        buttonText: "Submit",
-        buttonType: "btn-default",
-        handleButtonPress: null,
+        buttonType: "default",
+        onPress: null,
         style: null,
+        textStyle: null,
         buttonStretch: false
     }
     render(){
@@ -22,23 +23,29 @@ export default class Button extends React.Component{
         return(
             <View>
                 <TouchableOpacity 
-                    onPress = {() => {this.props.handleButtonPress && this.props.handleButtonPress()}}
+                    disabled = {this.props.onPress ? false: true}
+                    onPress = {() => {this.props.onPress && this.props.onPress()}}
+                    style = {[
+                        this.props.buttonStretch ? {width: Dimensions.get("window").width} : {},
+                        styles.buttonStyle,
+                        buttonType == 'default' ? {borderWidth: 1} :
+                        buttonType == 'primary' ? {backgroundColor: "#337ab7"} : 
+                        buttonType == 'success' ? {backgroundColor: "#5cb85c"} : 
+                        buttonType == 'info' ? {backgroundColor: "#5bc0de"} : 
+                        buttonType == 'warning' ? {backgroundColor: "#f0ad4e"} : 
+                        buttonType == 'danger' ? {backgroundColor: "#d9534f"} : null,
+                        this.props.style
+                    ]}
                 >
                     <Text 
                         style = {[
-                            styles.buttonStyle,
-                            this.props.buttonStretch ? {width: Dimensions.get("window").width} : {},
-                            buttonType == 'btn-default' ? {borderWidth: 1} :
-                            buttonType == 'btn-primary' ? {backgroundColor: "#337ab7", color: 'white'} : 
-                            buttonType == 'btn-success' ? {backgroundColor: "#5cb85c", color: 'white'} : 
-                            buttonType == 'btn-info' ? {backgroundColor: "#5bc0de", color: 'white'} : 
-                            buttonType == 'btn-warning' ? {backgroundColor: "#f0ad4e", color: 'white'} : 
-                            buttonType == 'btn-danger' ? {backgroundColor: "#d9534f", color: 'white'} : 
-                            buttonType == 'btn-link' ? {color: '#337ab7'} : null,
-                            this.props.style
+                            buttonType == 'default' ? {color: 'black'} :
+                            buttonType == 'link' ? {color: '#337ab7', borderBottomWidth: 1} : 
+                            {color: 'white'},
+                            this.props.textStyle
                         ]}
                     >
-                        {this.props.buttonText}
+                        {this.props.children}
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -48,7 +55,8 @@ export default class Button extends React.Component{
 const styles = StyleSheet.create({
     buttonStyle: {
         padding: 10,
-        textAlign: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: 3
     }
 })
