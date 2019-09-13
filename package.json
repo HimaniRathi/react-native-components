@@ -13,7 +13,11 @@
   "keywords": [
     "Button",
     "Search",
-    "Search Bar"
+    "Search Bar",
+    "Assistive Touch",
+    "Draggable",
+    "swipe",
+    "Radio Button"
   ],
   "author": "Himani Rathi",
   "license": "MIT",

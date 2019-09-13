@@ -7,14 +7,8 @@ module.exports = {
   },
   get AssistiveTouch() {
     return require('./components/AssistiveTouch').default;
+  },
+  get Radio() {
+    return require('./components/Radio').default;
   }
 };
-// import Button from './components/Button';
-// import SearchBar from './components/SearchBar';
-// import AssistiveTouch from './components/AssistiveTouch';
-
-// export default {
-//     Button,
-//     SearchBar,
-//     AssistiveTouch
-// }

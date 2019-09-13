@@ -12,7 +12,7 @@ Put a text in Button; required: yes
 
 | Properties | Type | Default | Values | Description|
 | --- | --- | --- | --- | --- |
-| `buttonType` | `String` | `btn-default` | `btn-default`, `btn-primary`, `btn-success`, `btn-info`, `btn-warning`, `btn-danger`, `btn-link` | different style of button |
+| `buttonType` | `String` | `default` | `default`, `primary`, `success`, `info`, `warning`, `danger`, `link` | different style of button |
 | `onPress` | `Function` | `null` | Pass a function | on button press, the function will be called |
 | `style` | `Object` | `null` | Props of Stylesheet with values | give style to the button as the user wants |
 | `textStyle` | `Object` | `null` | Props of Stylesheet with values | give style to the text in the button as the user wants |

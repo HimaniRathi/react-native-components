@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, View, TextInput, Dimensions, TouchableOpacity} from 'react-native';
+import { StyleSheet, Image, View, TextInput, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
 import searchIcon from '../assets/search_icon.png';
 
