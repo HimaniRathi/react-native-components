@@ -4,7 +4,8 @@
   "description": "basic react native components to make coding easy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "coverage": "nyc npm run test"
   },
   "repository": {
     "type": "git",
@@ -23,13 +24,34 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.6.0",
-    "react": "16.8.3"
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-native-size-matters": "^0.2.1",
+    "react-test-renderer": "^16.9.0"
   },
   "peerDependencies": {
-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-navigation": "^3.11.1"
   },
   "bugs": {
     "url": "https://github.com/HimaniRathi/react-native-components/issues"
   },
-  "homepage": "https://github.com/HimaniRathi/react-native-components#readme"
+  "homepage": "https://github.com/HimaniRathi/react-native-components#readme",
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-react-16-adapter-setup": "^0.1.0",
+    "jest-enzyme": "^7.1.1",
+    "nyc": "^14.1.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupFiles": [
+      "enzyme-react-16-adapter-setup"
+    ]
+  }
 }

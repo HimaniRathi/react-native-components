@@ -10,5 +10,11 @@ module.exports = {
   },
   get Radio() {
     return require('./components/Radio').default;
+  },
+  get CardForView(){
+    return require('./components/CardForView').default;
+  },
+  get Colors(){
+    return require('./components/Colors').default;
   }
 };

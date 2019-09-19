@@ -18,15 +18,16 @@ export default class Radio extends React.Component{
     state = {
         isSelected: this.props.value
     }
+    onPressHandler = () => {
+        this.setState(state => {state.isSelected = !state.isSelected; return state;})
+        this.props.onChange && this.props.onChange(this.state.isSelected)
+    }
     render(){
         return(
             <View style = {{flexDirection: "row"}}>
                 <TouchableOpacity 
                     style = {[styles.outerCircle, this.state.isSelected ? {backgroundColor: "green"} : {backgroundColor: "#a3a3a3"}]}
-                    onPress = {() => {
-                        this.setState(state => {state.isSelected = !state.isSelected; return state;})
-                        this.props.onChange && this.props.onChange(this.state.isSelected)
-                    }}
+                    onPress = {this.onPressHandler}
                 >
                     <View style = {[styles.innerCircle, {backgroundColor: "white"}]}/>
                 </TouchableOpacity>

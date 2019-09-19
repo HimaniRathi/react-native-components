@@ -24,9 +24,9 @@ export default class Button extends React.Component{
             <View>
                 <TouchableOpacity 
                     disabled = {this.props.onPress ? false: true}
-                    onPress = {() => {this.props.onPress && this.props.onPress()}}
+                    onPress = {this.props.onPress}
                     style = {[
-                        this.props.buttonStretch ? {width: Dimensions.get("window").width} : {},
+                        this.props.buttonStretch ? {width: Dimensions.get("window").width} : null,
                         styles.buttonStyle,
                         buttonType == 'default' ? {borderWidth: 1} :
                         buttonType == 'primary' ? {backgroundColor: "#337ab7"} : 

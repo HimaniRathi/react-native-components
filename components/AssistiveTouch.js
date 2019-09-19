@@ -23,7 +23,7 @@ export default class AssistiveTouch extends React.Component{
         text: '',
         textStyle: null
     }
-    componentDidMount(){
+    componentDidMount = () => {
         let {startPosition} = this.props;
         this.state.pan.setValue({x: startPosition.x, y: startPosition.y})
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, View, TextInput, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
-import searchIcon from '../assets/search_icon.png';
 
 export default class SearchBar extends React.Component{ 
     static propTypes = {
@@ -26,24 +25,24 @@ export default class SearchBar extends React.Component{
     state = {
         selected: false
     }
+    onFocus = () => {
+        this.setState({selected: true})
+    }
+    onBlur = () => {
+        this.setState({selected: false})
+    }
     render(){
         return(
             <View style = {this.state.selected ? [styles.filterInput, this.props.searchBarStyle, this.props.searchBarHighlightStyle]: [styles.filterInput, this.props.searchBarStyle]}>
-                <TouchableOpacity style = {[styles.searchIconStyle, this.props.searchIconStyle]} onPress = {() => {this.props.onSearchPress && this.props.onSearchPress()}}>
-                    <Image source = {searchIcon}/>
+                <TouchableOpacity style = {[styles.searchIconStyle, this.props.searchIconStyle]} onPress = {this.props.onSearchPress}>
+                    <Image source = {{uri: 'https://i.ibb.co/825hncV/search-icon.png'}}/>
                 </TouchableOpacity>
                 <TextInput
                     style = {[styles.placeholderStyle, this.props.placeholderTextStyle]}
                     placeholder={this.props.placeholderText}
-                    onChangeText={searchTerm => {
-                        this.props.onSearchTextChange && this.props.onSearchTextChange(searchTerm);
-                    }}
-                    onFocus = {() => {
-                        this.setState({selected: true})
-                    }}
-                    onBlur = {() => {
-                        this.setState({selected: false})
-                    }}
+                    onChangeText={this.props.onSearchTextChange}
+                    onFocus = {this.onFocus}
+                    onBlur = {this.onBlur}
                 />
             </View>
         )
@@ -64,6 +63,12 @@ const styles = StyleSheet.create({
         width: '90%'
     },
     searchIconStyle: {
-        margin: 10
+        width: 20, 
+        height: 20,
+        margin: 10,
+        // borderWidth: 1,
+        // height: 50,
+        // width: 50,
+        // backgroundColor: "black"
     }
 })
